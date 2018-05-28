@@ -1,0 +1,33 @@
+{
+  "name": "mediacentral-sign",
+  "version": "0.0.66",
+  "description": "Signing tool for mediacentral cloud-ux apps",
+  "main": "lib/sign.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.devops-int.avid.com:aziemba/avid-sign.git"
+  },
+  "keywords": [
+    "MediaCentral",
+    "Avid",
+    "sign"
+  ],
+  "author": "Artur Ziemba artur.ziemba@avid.com>",
+  "license": "EULA",
+  "dependencies": {
+    "js-sha512": "^0.7.1",
+    "sshpk": "^1.14.1",
+    "util.promisify": "^1.0.0",
+    "yargs": "^11.0.0"
+  },
+  "bin": {
+    "mediacentral-sign": "./bin/sign.js"
+  },
+  "preferGlobal": true,
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1"
+  }
+}

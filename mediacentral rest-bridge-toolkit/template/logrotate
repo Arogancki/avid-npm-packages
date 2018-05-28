@@ -1,0 +1,8 @@
+/var/log/avid/media-index/avid-acs-autocomplete.log /var/log/avid/media-index/avid-acs-autocomplete.err {
+        daily
+        rotate 10
+        missingok
+        notifempty
+        compress
+        delaycompress
+}

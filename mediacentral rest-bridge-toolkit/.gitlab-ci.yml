@@ -1,0 +1,14 @@
+cache:
+     path:
+           - node_modules/
+
+before_script:
+        - npm install
+
+stages:
+        - test
+
+job_name:
+        stage: test
+        script:
+        - npm test

@@ -1,0 +1,10 @@
+apiVersion: platform.avid.com/v1
+kind: UIPlugin
+metadata:
+  name: cloudux-app
+  labels:
+    app: cloudux-app
+spec:
+  containers:
+    - name: cloudux-app
+      image: '{{ .Values.global.image_registry }}/{{ .Values.image }}'

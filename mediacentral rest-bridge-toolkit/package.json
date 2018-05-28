@@ -1,0 +1,30 @@
+{
+  "name": "rest-bridge-toolkit",
+  "version": "1.0.0",
+  "description": "Toolkit to generate platfrom facades for REST services",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover --report html node_modules/mocha/bin/_mocha --recursive $(find ./test -path '*Test.js*')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.devops-int.avid.com:incubator/rest-bridge-toolkit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "array-includes": "^3.0.3",
+    "bluebird": "*",
+    "ejs": "*",
+    "esformatter": "^0.10.0",
+    "raml-1-parser": "^1.1.35",
+    "yargs": "10.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "should": "^6.0.1",
+    "sinon": "^1.16.1",
+    "mockery": "^1.4.0",
+    "istanbul": "*"
+  }
+}

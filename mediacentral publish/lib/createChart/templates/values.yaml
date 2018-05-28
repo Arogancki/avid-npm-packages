@@ -1,0 +1,3 @@
+global:
+  image_registry: local
+image: 'avidszczecin/cloudux-app:0.0.1-new'

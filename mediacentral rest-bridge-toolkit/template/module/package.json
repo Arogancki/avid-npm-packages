@@ -1,0 +1,21 @@
+{
+    "name": "<%= projectName %>",
+    "version": "<%= componentVersion %>",
+    "description": "<%= description %>",
+    "main": "index.js",
+    "scripts": {
+      "start": "node run.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "author": "Avid Technology",
+    "license": "ISC",
+    "dependencies": {
+      "joi": "6.9.1",
+      "node-rest-client": "*",
+      "proxy-bal": "http://burl-nexus.global.avidww.com:8081/nexus/content/repositories/npm-all/proxy-bal/-/proxy-bal-3.9.5.tgz"
+    },
+    "devDependencies": {}
+  }

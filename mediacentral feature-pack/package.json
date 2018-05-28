@@ -1,0 +1,36 @@
+{
+  "name": "mediacentral-feature-pack",
+  "version": "0.0.26",
+  "description": "A feature pack tool for mediacentral cloud-ux projects",
+  "main": "lib/pack.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.devops-int.avid.com:aziemba/mediacentral-feature-pack.git"
+  },
+  "keywords": [
+    "MediaCentral",
+    "Avid",
+    "feature",
+    "pack"
+  ],
+  "author": "Artur Ziemba artur.ziemba@avid.com>",
+  "license": "EULA",
+  "dependencies": {
+    "compressjs": "^1.0.3",
+    "randomstring": "^1.1.5",
+    "simple-archiver": "^0.2.0",
+    "time-stamp": "^2.0.0",
+    "util.promisify": "^1.0.0",
+    "yargs": "^11.0.0"
+  },
+  "bin": {
+    "mediacentral-feature-pack": "./bin/pack.js"
+  },
+  "preferGlobal": true,
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1"
+  }
+}

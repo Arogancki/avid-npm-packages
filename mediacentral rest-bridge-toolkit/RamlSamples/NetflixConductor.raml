@@ -1,0 +1,63 @@
+#%RAML 1.0
+title: Netflix Conductor
+version: 1.0.0
+description: Orchestration service
+protocols: [HTTP]
+baseUri: "http://127.0.0.0:8080/api"
+mediaType: application/json
+Task:
+    type: object
+Workflow:
+    type: object
+WorkflowInput:
+    type: object
+
+/metadata/taskdefs:
+    get:
+        description: Get all task definitions
+        200:
+            body:
+                application/json:
+                    type: Task[]
+    post:
+        decription: Create new task deinition(s)
+        body:
+            application/json:
+                    type: Task[]
+
+/metadata/workflow:
+    get:
+        description: Get workflows
+        200:
+            body:
+                application/json:
+                    type: Workflow[]
+    
+    post:
+        description: Create new workflow
+        body:
+            application/json:
+                type: Workflow
+
+/metadata/workflow/{name}:
+    get:
+        description: Get workflow definition by name
+        200:
+            body:
+                application/json:
+                    type: Workflow
+
+/workflow/{name}:
+    post:
+        description: Start workflow by name
+        body:
+            application/json:
+                type: WorkflowInput
+
+/workflow/{workflowId}:
+    get:
+        description: Gets the workflow by Id
+        200:
+            body:
+                application/json:
+                    type: Workflow

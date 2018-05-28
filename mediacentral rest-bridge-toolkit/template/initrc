@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# "<%= serviceType %>"
+#
+# chkconfig:   - 98 20
+# description: "<%= description %>"
+
+### BEGIN INIT INFO
+# Provides:             "<%= serviceType %>"
+# Required-Start:       $local_fs $network $remote_fs rabbitmq-server
+# Required-Stop:        $local_fs $network $remote_fs
+# Short-Description:    The ACS Mail Service
+# Description:          The ACS Mail Service manages messaging and message archival
+### END INIT INFO
+
+# Source function library.
+. /opt/avid/share/avid/rc/central-search-functions.sh
+. /etc/profile.d/avid.sh
+. /etc/profile.d/acs-node.sh
+. /opt/avid/share/avid-daemonizer/avid-daemonizer.sh
+
+
+AVID_SERVICE_NAME="<%= serviceType %>"
+AVID_SERVICE_START_CMD="/opt/avid/sbin/$AVID_SERVICE_NAME"
+AVID_SERVICE_PID_FILE="/var/run/avid/acs/${AVID_SERVICE_NAME}.pid"
+AVID_SERVICE_STDOUT_FILE="/var/log/avid/media-index/${AVID_SERVICE_NAME}.log"
+AVID_SERVICE_STDERR_FILE="/var/log/avid/media-index/${AVID_SERVICE_NAME}.err"
+
+
+[ -e /etc/sysconfig/$AVID_SERVICE_NAME ] && . /etc/sysconfig/$AVID_SERVICE_NAME
+
+
+function avid_svc_prestart {
+    exec > >(tee -a $AVID_SERVICE_STDOUT_FILE) 2>&1
+    init_settings
+    ret=$?
+
+    if [ $ret != 0 ] ; then
+       return 1
+    else
+       return 0
+    fi
+}
+
+avid_svc_ctrl "$@"

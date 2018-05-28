@@ -1,0 +1,39 @@
+{
+  "name": "mediacentral-publish",
+  "version": "0.0.38",
+  "description": "A publish tool for publishing cloud-ux projects",
+  "main": "lib/publish.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.devops-int.avid.com:aziemba/mediacentral-publish.git"
+  },
+  "keywords": [
+    "MediaCentral",
+    "Avid",
+    "publish"
+  ],
+  "author": "Artur Ziemba artur.ziemba@avid.com>",
+  "license": "EULA",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "fs-extra": "^6.0.1",
+    "js-yaml": "^3.11.0",
+    "mediacentral-feature-pack": "*",
+    "mediacentral-sign": "*",
+    "mediacentral-upload": "*",
+    "normalize-path": "^3.0.0",
+    "randomstring": "^1.1.5",
+    "util.promisify": "^1.0.0",
+    "yargs": "^11.1.0"
+  },
+  "bin": {
+    "mediacentral-publish": "./bin/publish.js"
+  },
+  "preferGlobal": true,
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1"
+  }
+}
